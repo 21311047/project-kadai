@@ -1,0 +1,15 @@
+spring:
+    profiles:
+        active: dev
+---
+spring:
+    profiles: dev
+    datasource:
+        url: jdbc:mysql://localhost/user_register?characterEncoding=UTF-8
+        username: user_register
+        password: user_register
+        driverClassName: com.mysql.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+    thymeleaf.cache: false
