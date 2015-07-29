@@ -3,6 +3,9 @@
 <head lang="ja">
     <meta charset="UTF-8" />
     <title>ユーザー一覧</title>
+    <link rel="stylesheet"
+    href="/static/bower_components/bootstrap/dist/css/bootstrap.css"
+    th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}" />
 </head>
 <body>
 <table>
@@ -11,5 +14,15 @@
         <td th:text="${user.name}"></td>
     </tr>
 </table>
+    <div class="panel panel-default">
+    	<div class="panel-heading" role="tab" id="headingOne">
+   			 <h1 class="panel-title">
+			 	<a data-toggle="collapse" data-parent="#writeRecord" href="http://localhost:8080/" aria-expanded="true" aria-controls="collapseOne">
+    				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+				 		トップページに戻る
+				</a>
+			</h1>
+		</div>
+	</div>
 </body>
 </html>

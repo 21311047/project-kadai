@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="/css/style.css"/>
     <meta charset="UTF-8" />
     <title>ユーザー登録</title>
+    <link rel="stylesheet"
+    href="/static/bower_components/bootstrap/dist/css/bootstrap.css"
+    th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}" />
 </head>
 <body>
 <form th:action="@{/users/register}" method="post" th:object="${studentForm}">
@@ -30,6 +33,15 @@
         </tr>
     </table>
 </form>
-
+    <div class="panel panel-default">
+    	<div class="panel-heading" role="tab" id="headingOne">
+   			 <h1 class="panel-title">
+			 	<a data-toggle="collapse" data-parent="#writeRecord" href="http://localhost:8080/" aria-expanded="true" aria-controls="collapseOne">
+    				<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+				 		トップページに戻る
+				</a>
+			</h1>
+		</div>
+	</div>
 </body>
 </html>
