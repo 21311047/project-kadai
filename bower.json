@@ -1,12 +1,22 @@
 {
   "name": "UserRegisterMVC",
   "version": "0.0.0",
+  "homepage": "https://github.com/21311047/project-kadai",
+  "authors": [
+    "Uno.Yusuke <21311047yu@tama.ac.jp>"
+  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "src/main/resources/static/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4",
+    "angularjs": "~1.4.0"
+  }
 }
