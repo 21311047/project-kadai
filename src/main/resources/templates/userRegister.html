@@ -12,35 +12,81 @@
      th:src="@{/bower_components/angularjs/angular.js}"></script>
 </head>
 <body>
+    <script src="/static/bower_components/jquery/dist/jquery.js"
+        th:src="@{/bower_components/jquery/dist/jquery.js}"></script>
+    <script
+        src="/static/bower_components/bootstrap/dist/js/bootstrap.js"
+        th:src="@{/bower_components/bootstrap/dist/js/bootstrap.js}"></script>
+    <script
+            src="/static/bower_components/angularjs/angular.js"
+            th:src="@{/bower_components/angularjs/angular.js}"></script>
+    <script src="/static/js/app.js" th:src="@{/js/app.js}"></script>
+    <script src="/static/js/controller/indexController.js" th:src="@{/js/controller/indexController.js}"></script>
 <form th:action="@{/users/register}" method="post" th:object="${studentForm}">
     <table>
-        <tr>
-            <td>
-                <span>ID:</span>
-                <input name = "id" type="text" th:field="*{id}" th:errorclass="error-input"/>
-                <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="error-message"></span>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span>Name:</span>
-                <input name = "name" type="text" th:field="*{name}" th:errorclass="error-input"/>
-                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error-message"></span>
-            </td>
-        </tr>
+                <div id="collapseOne" class="panel-collapse collapse in"
+                    role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <div class="row" style="margin-top: 20px">
+                            <div class="form-group" ng-class="{true: 'has-error',false: 'is-required'}[form.title.$dirty &amp;&amp; form.title.$invalid]" >
+                                <label
+                                    class="control-label col col-md-1 col-sm-2 col-xs-3"
+                                    for="title">学籍番号:</label>
+                                <div class="col col-md-5 col-sm-10 col-xs-9 ">
+                                    <input
+                                        class="form-control"
+                                        ng-model="id"
+                                        required="true"
+                                        ng-maxlength="20"
+                                        name="id" id="id" th:field="*{id}" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 20px">
+                            <div class="form-group" ng-class="{true: 'has-error',false: 'is-required'}[form.title.$dirty &amp;&amp; form.title.$invalid]" >
+                                <label
+                                    class="control-label col col-md-1 col-sm-2 col-xs-3"
+                                    for="title">名前:</label>
+                                <div class="col col-md-5 col-sm-10 col-xs-9 ">
+                                    <input
+                                        class="form-control"
+                                        ng-model="name"
+                                        required="true"
+                                        ng-maxlength="20"
+                                        name="name" id="name" th:field="*{name}" type="text"/>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                   </div>
+                      <div class="row" style="margin-top: 20px">
+                            <div class="form-group">
+                                <table class="col col-md-1 col-md-offset-3 col-sm-2 col-xs-3">
+                                    <tr>
+                                        <td class="text-right small" ng-class="lengthCheck(form.id.$viewValue,'20')" style="padding-right: 15px;">{{20 - form.id.$viewValue.length}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right small" ng-class="lengthCheck(form.name.$viewValue,'140')" style="padding-right: 15px;">{{140 - form.name.$viewValue.length}}</td>
+                                    </tr>
+                                </table>
+                             </div>
+               		 </div>
+
         <tr>
             <td>
                 <input type="submit" value="登録"/>
             </td>
+
         </tr>
     </table>
+
 </form>
 
     <div class="panel panel-default">
     	<div class="panel-heading" role="tab" id="headingOne">
    			 <h1 class="panel-title">
 			 	<a data-toggle="collapse" data-parent="#writeRecord" href="http://localhost:8080/" aria-expanded="true" aria-controls="collapseOne">
-    				<span class="glyphicon glyphicon-menu-righ" aria-hidden="true"></span>
+    				<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 				 		トップページに戻る
 				</a>
 			</h1>
