@@ -2,14 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head lang="ja">
-    <link rel="stylesheet" href="/css/style.css"/>
     <meta charset="UTF-8" />
     <title>ユーザー登録</title>
     <link rel="stylesheet"
     href="/static/bower_components/bootstrap/dist/css/bootstrap.css"
     th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}" />
-    <script src="/static/bower_components/angularjs/angular.js"
-     th:src="@{/bower_components/angularjs/angular.js}"></script>
 </head>
 <body>
     <script src="/static/bower_components/jquery/dist/jquery.js"
@@ -24,7 +21,7 @@
     <script src="/static/js/controller/indexController.js" th:src="@{/js/controller/indexController.js}"></script>
 <form th:action="@{/users/register}" method="post" th:object="${studentForm}">
     <table>
-                <div id="collapseOne" class="panel-collapse collapse in"
+				<div id="collapseOne" class="panel-collapse collapse in"
                     role="tabpanel" aria-labelledby="headingOne">
                     <div class="panel-body">
                         <div class="row" style="margin-top: 20px">
@@ -57,26 +54,14 @@
                                 </div>
                             </div>
                         </div>
-                      </div>
-                   </div>
-                      <div class="row" style="margin-top: 20px">
-                            <div class="form-group">
-                                <table class="col col-md-1 col-md-offset-3 col-sm-2 col-xs-3">
-                                    <tr>
-                                        <td class="text-right small" ng-class="lengthCheck(form.id.$viewValue,'20')" style="padding-right: 15px;">{{20 - form.id.$viewValue.length}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right small" ng-class="lengthCheck(form.name.$viewValue,'140')" style="padding-right: 15px;">{{140 - form.name.$viewValue.length}}</td>
-                                    </tr>
-                                </table>
-                             </div>
-               		 </div>
-
+                     </div>
+                  </div>
         <tr>
             <td>
-                <input type="submit" value="登録"/>
+           		<div style="margin-left: 350px">
+                	<input type="submit" value="登録"/>
+                </div>
             </td>
-
         </tr>
     </table>
 
@@ -85,8 +70,8 @@
     <div class="panel panel-default">
     	<div class="panel-heading" role="tab" id="headingOne">
    			 <h1 class="panel-title">
-			 	<a data-toggle="collapse" data-parent="#writeRecord" href="http://localhost:8080/" aria-expanded="true" aria-controls="collapseOne">
-    				<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+			 	<a href="http://localhost:8080/">
+    				<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
 				 		トップページに戻る
 				</a>
 			</h1>
