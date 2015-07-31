@@ -1,13 +1,14 @@
 package UserRegister;
 
-import UserRegister.Repository.UserRepository;
-import UserRegister.model.Student;
+import java.util.Scanner;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Scanner;
+import UserRegister.Repository.UserRepository;
+import UserRegister.model.Student;
 
 @SpringBootApplication
 public class UserRegisterApplication implements CommandLineRunner{
@@ -22,19 +23,19 @@ public class UserRegisterApplication implements CommandLineRunner{
     public void run(String... strings) throws Exception {
         Student student = new Student();
         //Create
-        student.setId(20511091);
-        student.setName("かじわら ゆたか");
+        student.setId(21311047);
+        student.setName("うの ゆうすけ");
         userRepository.save(student);
         //Select(Read)
-        student = userRepository.findOne(20511091);
+        student = userRepository.findOne(21311047);
         System.out.println("User ID = " + student.getId());
         System.out.println("User Name = " + student.getName());
 
         //Update
-        student.setName("梶原 裕");
+        student.setName("宇野 裕介");
         userRepository.save(student);
         //Select
-        student = userRepository.findOne(20511091);
+        student = userRepository.findOne(21311047);
         System.out.println("User ID = " + student.getId());
         System.out.println("User Name = " + student.getName());
 

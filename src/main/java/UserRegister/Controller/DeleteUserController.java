@@ -41,7 +41,7 @@ public class DeleteUserController {
         student.setId(studentForm.getId());
         student.setName(studentForm.getName());
         userRepository.delete(student);
-        return "redirect:/users";
+        return "redirect:/users/delete";
     }
 
 }

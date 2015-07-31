@@ -8,6 +8,7 @@
     th:href="@{/bower_components/bootstrap/dist/css/bootstrap.css}" />
 </head>
 <body>
+<div> ユーザー一覧ページ</div>
 <table>
     <tr th:each="user :${users}">
         <td th:text="${user.id}"></td>
